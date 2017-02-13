@@ -5,8 +5,7 @@ angular.module('services.personFactory', ['ngRoute','ngResource'])
         { get: { method: 'GET', isArray: true}});
     })
     .factory('allPersons', function($resource) {
-        return $resource('/persons',{},
-        { get: { method: 'GET', isArray: true}});
+        return $resource('/persons');
     });
 
 

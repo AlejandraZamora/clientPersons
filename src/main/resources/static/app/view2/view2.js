@@ -19,9 +19,9 @@ angular.module('myApp.view2', ['ngRoute'])
 
         $scope.savePerson= function(){
             $rootScope.nameP=$scope.firstName;
-            $scope.person={"name":$scope.lastName, "firstName":$scope.name, "address":{"street":$scope.address,"zip":$scope.zip,"city":$scope.city}};
+            $rootScope.person={"name":$scope.lastName, "firstName":$scope.name, "address":{"street":$scope.address,"zip":$scope.zip,"city":$scope.city}};
             allPersons.save($scope.person,function(){
-                console.info("Person saved   "+ $scope.person.name);
+                console.info("Person saved   "+ $rootScope.person.name);
             });
             $location.path("view3");
 

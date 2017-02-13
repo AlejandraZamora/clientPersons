@@ -9,16 +9,9 @@ angular.module('myApp.view3', ['ngRoute'])
   });
 }])
 
-.controller('ControladorListado', ['$rootScope', '$scope', 'personById','$http','$resource', '$location', function ($rootScope, $scope, personById, $http, $resource, $location) {
-        console.info($rootScope.nameP);
-        personById.get({name:"ale"})
-            .$promise.then(function(personR) {
-              var person = personR;
-              console.info("Se encontro! "+ person);
-            },
-              //error
-              function(error){
-                  console.info("error");
-              });
+.controller('ControladorListado', ['$rootScope', '$scope', function ($rootScope, $scope) {
+
+        $scope.person=$rootScope.person;
+
 
 }]);
